@@ -10,7 +10,6 @@ import Layout from './components/layout/Layout';
 import SignupPage from './pages/SignupPage';
 
 // PrivateRoute — if no token, redirect to /login
-// Django equivalent: @login_required or LoginRequiredMixin
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const token = useAuthStore((s) => s.token);
   const isAuthenticated = !!token;

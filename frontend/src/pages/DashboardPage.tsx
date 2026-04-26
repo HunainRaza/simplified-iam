@@ -29,7 +29,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-16 px-6">
-      {/* Search bar — matches screenshot 2 */}
+      {/* Search bar */}
       <div className="w-full max-w-2xl mb-12">
         <p className="text-sm text-gray-600 mb-2">Benutzer suchen</p>
         <div className="flex gap-3">
@@ -67,7 +67,7 @@ export default function DashboardPage() {
         )}
       </div>
 
-      {/* Action cards — matches the 4-card row in screenshot 2 */}
+      {/* Action cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-4xl">
         {actionCards.map(({ label, icon: Icon, to }) => (
           <button

@@ -35,7 +35,7 @@ export class UsersController {
     return this.usersService.remove(id);
   }
 
-  // PATCH /api/v1/users/:id/activate — matches the blue toggle in screenshot 7
+  // PATCH /api/v1/users/:id/activate
   @Patch(':id/activate')
   activate(@Param('id') id: string) {
     return this.usersService.toggleActive(id, true);

@@ -19,7 +19,6 @@ export class OrganizationsService {
       .orderBy('org.createdAt', 'ASC');
 
     if (search) {
-      // ILIKE = case-insensitive LIKE — Django equivalent: icontains
       qb.where('org.name ILIKE :search', { search: `%${search}%` });
     }
 

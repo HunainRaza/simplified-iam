@@ -9,10 +9,8 @@ import { JwtStrategy } from "./strategies/jwt.strategy";
 @Module({
   imports: [
     PassportModule,
-    // JwtModule.register() configures the JWT signer/verifier
-    // Secret is loaded async from ConfigService
     JwtModule.register({}),
-    UsersModule, // Import so we can inject UsersService here
+    UsersModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],

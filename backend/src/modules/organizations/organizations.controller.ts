@@ -9,8 +9,6 @@ export class OrganizationsController {
   constructor(private readonly orgsService: OrganizationsService) {}
 
   // GET /api/v1/organizations?search=kunden
-  // @Query('search') extracts ?search= from the URL
-  // Django equivalent: request.GET.get('search')
   @Get()
   findAll(@Query('search') search?: string) {
     return this.orgsService.findAll(search);

@@ -64,7 +64,6 @@ export default function SettingsPage() {
   const updateMutation = useMutation({
     mutationFn: (data: Partial<AuthSettings>) => settingsApi.update(data),
     // Optimistic update — update UI immediately, sync with server in background
-    // Django has no built-in equivalent — this is a React Query pattern
     onMutate: async (newData) => {
       await qc.cancelQueries({ queryKey: ['settings'] });
       const previous = qc.getQueryData<AuthSettings>(['settings']);

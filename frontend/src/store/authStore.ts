@@ -3,8 +3,6 @@ import { persist } from 'zustand/middleware';
 import type { User } from '../types';
 
 // persist middleware saves the store to localStorage automatically
-// So the user stays logged in across page refreshes
-// Django equivalent: session cookies persisting across browser tabs
 interface AuthState {
   token: string | null;
   user: User | null;

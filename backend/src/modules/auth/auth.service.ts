@@ -22,7 +22,6 @@ export class AuthService {
     if (!user.isActive) throw new UnauthorizedException('Account is deactivated');
 
     // 2. Compare submitted password against bcrypt hash
-    // Django equivalent: user.check_password(password)
     const passwordMatch = await bcrypt.compare(dto.password, user.password);
     if (!passwordMatch) throw new UnauthorizedException('Invalid credentials');
 

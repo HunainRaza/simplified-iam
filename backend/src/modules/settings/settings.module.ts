@@ -5,9 +5,9 @@ import { SettingsController } from "./settings.controller";
 import { SettingsService } from "./settings.service";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([AuthSettings])], // "I own this table"
+  imports: [TypeOrmModule.forFeature([AuthSettings])],
   controllers: [SettingsController],
   providers: [SettingsService],
-  exports: [SettingsService], // Other modules can inject SettingsService if needed
+  exports: [SettingsService],
 })
 export class SettingsModule {}

@@ -143,7 +143,7 @@ export default function OrganizationsPage() {
         </div>
       </div>
 
-      {/* Create org modal — matches screenshot 5 */}
+      {/* Create org modal */}
       <Modal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

@@ -41,7 +41,7 @@ export class UsersService {
     return user;
   }
 
-  // Used by Auth module to verify login — needs the password field explicitly
+  // Used by Auth module to verify login
   async findByUsernameWithPassword(username: string): Promise<User | null> {
     return this.userRepo.createQueryBuilder('user')
       .addSelect('user.password') // password has select:false, must opt-in
@@ -50,7 +50,7 @@ export class UsersService {
   }
 
   async create(dto: CreateUserDto): Promise<User> {
-    // Check for duplicate username/email — like Django's IntegrityError handling
+    // Check for duplicate username/email
     const existing = await this.userRepo.findOne({
       where: [{ username: dto.username }, { email: dto.email }],
     });

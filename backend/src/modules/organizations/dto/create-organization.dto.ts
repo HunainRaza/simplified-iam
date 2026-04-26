@@ -5,7 +5,6 @@ export class CreateOrganizationDto {
   @IsNotEmpty()
   name: string;
 
-  // Optional parent for hierarchy — matches the "Übergeordnete Organisation" dropdown
   @IsOptional()
   @IsUUID()
   parentId?: string;

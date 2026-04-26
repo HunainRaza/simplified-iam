@@ -10,7 +10,7 @@ export class Organization {
     @Column()
     name: string;
 
-    @ManyToOne(() => Organization, (org) => org.children, { nullable: true, onDelete: 'SET NULL' }) // SET_NULL
+    @ManyToOne(() => Organization, (org) => org.children, { nullable: true, onDelete: 'SET NULL' })
     @JoinColumn({ name: 'parent_id' })
     parent: Organization;
 
